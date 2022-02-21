@@ -1,0 +1,22 @@
+<div class="card mb-3" *ngFor="let news of newsToDisplay">
+  <div class="row g-0">
+      <div class="col-sm-5">
+          <img [src]="news.urlToImage" class="card-img-top h-100" alt="...">
+      </div>
+      <div class="col-sm-7">
+          <div class="card-body">
+              <h5 class="card-title">{{news.title}}</h5>
+              <p class="card-text">{{news.description}}</p>
+          </div>
+      </div>
+  </div>
+</div>
+
+<app-pagination
+  [current]="current"
+  [total]="total"
+  (goTo)="onGoTo($event)"
+  (next)="onNext($event)"
+  (previous)="onPrevious($event)"
+></app-pagination>
+
